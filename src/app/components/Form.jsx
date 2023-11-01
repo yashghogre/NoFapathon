@@ -3,8 +3,11 @@
 import React, { useState } from 'react'
 import styles from '@/styles/loginform.module.css'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 const Form = () => {
+
+    const router = useRouter();
 
     const [userdata, setUserdata] = useState({
         email: '',
@@ -36,6 +39,11 @@ const Form = () => {
 
         const resdata = await res.json()
         console.log(resdata.message)
+
+        if (res.status === 200)
+        {
+            router.push('/Dashboard');
+        }
     }
     
     return (
