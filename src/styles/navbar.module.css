@@ -1,0 +1,39 @@
+.mainDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3vh 5vw;
+    background-color: transparent;
+}
+
+.logo {
+    background: linear-gradient(to right, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+}
+
+.logoLink {
+    color: black;
+    text-decoration: none;
+}
+
+.list {
+    display: flex;
+    justify-content: space-between;
+    gap: 7vw;
+}
+
+.listItem {
+    list-style: none;
+}
+
+.listItem:hover {
+    text-decoration: underline;
+}
+
+.listLink {
+    color: black;
+    text-decoration: none;
+}

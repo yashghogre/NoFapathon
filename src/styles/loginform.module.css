@@ -1,0 +1,25 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+.label {
+    font-size: 1.1vw;
+}
+
+.input {
+    border-radius: 1vh;
+    border: 0;
+    background-color: aqua;
+    height: 3vh;
+    width: 20vw;
+}
+
+.orDiv {
+    display: flex;
+}
+
+.dash {
+    border: solid 1px black;
+}
