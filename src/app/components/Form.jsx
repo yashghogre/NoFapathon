@@ -40,9 +40,9 @@ const Form = () => {
         const resdata = await res.json()
         console.log(resdata.message)
 
-        if (resdata.status === 200)
+        if (resdata.status === 201)
         {
-            router.push('/Dashboard');
+            console.log('Running...')
         }
     }
     
