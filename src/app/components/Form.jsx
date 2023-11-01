@@ -38,7 +38,7 @@ const Form = () => {
         } )
 
         const resdata = await res.json()
-        console.log(resdata.message)
+        console.log(res.status)
 
         if (res.status === 201)
         {
