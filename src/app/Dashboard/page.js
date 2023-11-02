@@ -2,9 +2,7 @@
 
 import React, { useState } from 'react'
 import styles from '@/styles/dashboard.module.css'
-import Navbar from '../components/Navbar'
 import Image from 'next/image'
-import Link from 'next/link'
 
 const page = () => {
 
