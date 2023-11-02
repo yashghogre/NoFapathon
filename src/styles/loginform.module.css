@@ -6,6 +6,7 @@
 
 .label {
     font-size: 1.1vw;
+    color: white;
 }
 
 .input {
@@ -51,10 +52,11 @@
 }
 
 .signupLink {
-    color: black;
+    color: white;
     text-decoration: none;
 }
 
 .signuptext {
-    color: #FF6A88;
+    /* color: #FF6A88; */
+    color: black;
 }

@@ -1,15 +1,30 @@
+.mainMainDiv {
+    background-image: url('https://image-cdn.essentiallysports.com/wp-content/uploads/Fj_EfXkWIAEjgj--1080x1065.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    height: 100%;
+    background-attachment: fixed;
+}
+
 .mainDiv {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 5vw;
+    /* gap: 1vw; */
+    height: 100vh;
 }
 
 .titleDiv {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 5vh auto;
+    /* margin: 5vh auto; */
+    padding-top: 8vh;
+}
+
+.title {
+    color: white;
 }
 
 .nofapathon {
@@ -26,6 +41,12 @@
 }
 
 .image {
-    height: 60vh;
+    height: 70vh;
     object-fit: contain;
+}
+
+.image1 {
+    height: 70vh;
+    object-fit: contain;
+    transform: scaleX(-1);
 }

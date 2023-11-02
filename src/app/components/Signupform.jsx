@@ -3,13 +3,17 @@
 import React, { useState } from 'react'
 import styles from '@/styles/signupform.module.css'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
 const Signupform = () => {
+
+    const router = useRouter();
 
     const [userdata, setUserdata] = useState({
         fname: '',
         lname: '',
         email: '',
+        username: '',
         age: '',
         password: '',
         cpassword: ''
@@ -38,6 +42,8 @@ const Signupform = () => {
         } )
 
         console.log(res.json())
+
+        router.push('/Login')
     }
 
     return (
@@ -49,6 +55,8 @@ const Signupform = () => {
                 <input type='text' name='lname' className={styles.input} value={userdata.lname} onChange={setData} />
                 <label className={styles.label}>email</label>
                 <input type='email' name='email' className={styles.input} value={userdata.email} onChange={setData} />
+                <label className={styles.label}>Username</label>
+                <input type='text' name='username' className={styles.input} value={userdata.username} onChange={setData} />
                 <label className={styles.label}>Age</label>
                 <input type='number' name='age' className={styles.input} value={userdata.age} onChange={setData} />
                 <label className={styles.label}>Password</label>
@@ -59,7 +67,7 @@ const Signupform = () => {
             </form>
             <div className={styles.orDiv}>
                 {/* <div className={styles.dash}></div> */}
-                <p>or</p>
+                <p className={styles.or}>or</p>
                 {/* <div className={styles.dash}></div> */}
             </div>
             <div className={styles.signupDiv}>

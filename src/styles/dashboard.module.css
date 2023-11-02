@@ -1,0 +1,55 @@
+.main {
+    background-image: url('https://cachedimages.podchaser.com/256x256/aHR0cHM6Ly9jcmVhdG9yLWltYWdlcy5wb2RjaGFzZXIuY29tLzJkNmEzNmI1ODg4MmE1MDlkYjAyNGM3NWY2MGFkYzU3LmpwZWc%3D/aHR0cHM6Ly93d3cucG9kY2hhc2VyLmNvbS9pbWFnZXMvbWlzc2luZy1pbWFnZS5wbmc%3D');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    height: 100%;
+    background-attachment: fixed;
+}
+
+.mainDiv {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5vh;
+}
+
+.streakCounter {
+    color: white;
+}
+
+.subText {
+    /* color: white; */
+    font-size: 3.5vh;
+}
+
+.mainBtnDiv {
+    display: flex;
+}
+
+.btnDiv {
+    display: flex;
+    flex-direction: column;
+}
+
+.smile {
+    height: 10vh;
+    object-fit: contain;
+}
+
+.sad {
+    height: 10vh;
+    object-fit: contain;
+}
+
+.btn {
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    font-size: 1.5vw;
+    cursor: pointer;
+    color: white;
+    border: none;
+    text-align: center;
+}

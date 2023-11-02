@@ -49,6 +49,7 @@
 .buttonContent {
   position: relative;
   z-index: 1;
+  font-size: 2.5vh;
 }
 
 .button::before {
@@ -72,6 +73,7 @@
   display: flex;
   flex-direction: column;
   gap: 5vh;
+  align-items: center;
 }
 
 .aboutTitleDiv {
@@ -85,9 +87,30 @@
 
 .aboutTextDiv {
   display: flex;
+  flex-direction: column;
+  gap: 2vh;
   justify-content: center;
+  width: 70%;
 }
 
 .aboutText {
+  color: black;
+  font-size: 2vw;
+}
+
+.linkBtn {
+  display: flex;
+  justify-content: center;
+}
+
+.videoDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10vh;
+}
+
+.videoDivTitle {
+  font-size: 5vh;
   color: white;
 }

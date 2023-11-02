@@ -11,6 +11,7 @@ const Form = () => {
 
     const [userdata, setUserdata] = useState({
         email: '',
+        username: '',
         password: ''
     })
     
@@ -50,7 +51,7 @@ const Form = () => {
     return (
         <div>
             <form className={styles.form}>
-                <label className={styles.label}>email</label>
+                <label className={styles.label}>email / username</label>
                 <input name='email' type='email' className={styles.input} value={userdata.email} onChange={setData} />
                 <label className={styles.label}>password</label>
                 <input name='password' type='password' className={styles.input} value={userdata.password} onChange={setData} />

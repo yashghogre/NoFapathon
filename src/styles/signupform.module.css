@@ -6,6 +6,7 @@
 
 .label {
     font-size: 1.1vw;
+    color: white;
 }
 
 .input {
@@ -51,8 +52,12 @@
     Margin-bottom: 5vh;
 }
 
+.or {
+    color: white;
+}
+
 .signupLink {
-    color: black;
+    color: white;
     text-decoration: none;
 }
 
