@@ -1,10 +1,26 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from '@/styles/dashboard.module.css'
 import Image from 'next/image'
 
 const page = () => {
+
+  useEffect(() => {
+    async function fetchData() {
+      const response = await fetch('https://npfapathon.onrender.com/dashboard', {
+        method: 'get',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json'
+        },
+      })
+      const resData = await response.json()
+      console.log(resData)
+    }
+
+    fetchData();
+  }, [])
 
   const [statusBtn, setStatusBtn] = useState(0)
 
@@ -27,12 +43,22 @@ const page = () => {
 
   const failed = async () => {
     setStatusBtn(0);
+    const res = await fetch('https://npfapathon.onrender.com/track', {
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ statusBtn })
+    }
+    )
+    const resData = await res.json();
+    console.log(resData)
   }
 
   return (
     <main className={styles.main}>
       <div className={styles.mainDiv}>
-        <h1 className={styles.streakCounter}>Your No Fap Streak: {days} days</h1>
+        <h1 className={styles.streakCounter}>Your No Fap Streak: {resData.days} days</h1>
         <p className={styles.subText}>Your balls have chip inserted in them, if you choose the incorrect option they will explode. So choose wisely!</p>
         <div className={styles.mainBtnDiv}>
           <div className={styles.btnDiv}>
