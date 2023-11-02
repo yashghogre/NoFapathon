@@ -1,12 +1,20 @@
 .main {
-  background-color: #FFDEE9;
-  background-image: linear-gradient(90deg, #ffffff 0%, #ffb9be 100%);
+  /* background-color: #FFDEE9;
+  background-image: linear-gradient(90deg, #ffffff 0%, #ffb9be 100%); */
+  background-image: url('https://styles.redditmedia.com/t5_1ysqvb/styles/profileIcon_nupvkzjl5j6a1.jpg?width=256&height=256&frame=1&auto=webp&crop=256:256,smart&s=c9207cda7adb4638941a5d57fc4619fc85cf4254');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  background-attachment: fixed;
 }
 
 .mainDiv {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
   margin: 10vh auto;
+  height: 100vh;
 }
 
 .leftDiv {
@@ -15,6 +23,10 @@
   gap: 5vh;
   align-items: center;
   justify-content: center;
+}
+
+.text {
+  color: white;
 }
 
 .button {
@@ -53,4 +65,29 @@
       #FF9A8B 10.8%,
       #FF6A88 94.3%);
   transition: all 0.475s;
+}
+
+.aboutDiv {
+  /* background: transparent; */
+  display: flex;
+  flex-direction: column;
+  gap: 5vh;
+}
+
+.aboutTitleDiv {
+  display: flex;
+  justify-content: center;
+}
+
+.aboutTitle {
+  color: white;
+}
+
+.aboutTextDiv {
+  display: flex;
+  justify-content: center;
+}
+
+.aboutText {
+  color: white;
 }
