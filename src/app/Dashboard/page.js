@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import styles from '@/styles/dashboard.module.css'
 import Image from 'next/image'
 
@@ -16,15 +16,19 @@ import Image from 'next/image'
 
 function page() {
 
-  const [days, setDays] = useState(0);
+  // const [days, setDays] = useState(0);
 
   // useEffect(() => {
 
   // }, [])
+
+  let days;
+  
   async function fetchData() {
     const response = await fetch('https://npfapathon.onrender.com/dashboard')
     const resData = await response.json()
-    setDays(resData.days)
+    // setDays(resData.days)
+    days = resData.days;
     console.log(resData)
   }
   fetchData();
