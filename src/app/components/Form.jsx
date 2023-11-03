@@ -45,7 +45,7 @@ const Form = () => {
             console.log('Running...');
             router.push('/Dashboard');
         }
-        else if (res.status === 404) {
+        else if (res.status === 409) {
             console.log('User not registered');
         }
         else if (res.status === 401) {
