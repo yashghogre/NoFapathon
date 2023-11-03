@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import React, {useEffect, useState} from 'react'
 import styles from '@/styles/dashboard.module.css'
 import Image from 'next/image'
 
@@ -8,16 +8,19 @@ function Page() {
 
 
   const [days, setDays] = useState(0)
+  const [refresh, setRefresh] = useState(false)
+  let statusBtn = 0
 
   useEffect(() => {
-    async function fetchData() {
+    async function fetchData()
+    {
       const response = await fetch('https://npfapathon.onrender.com/dashboard', {
         method: "get",
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json"
         },
-        credentials: "include"
+        credentials : "include"
       })
       const resData = await response.json()
       // setDays(resData.days)
@@ -27,43 +30,50 @@ function Page() {
     }
 
     fetchData()
-  }, [days])
-
-  let statusBtn;
+  }, [days, refresh])
 
   const success = async () => {
 
-    // setStatusBtn(1);
-    statusBtn = 1;
+    // setStatusBtn(1)
+    statusBtn = 1
 
     const res = await fetch('https://npfapathon.onrender.com/track', {
       method: 'post',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ statusBtn })
+      body: JSON.stringify({ status :  statusBtn }),
+      credentials : "include"
     }
     )
     const resData = await res.json();
     console.log(resData)
-
-
+    setRefresh(prev => {
+      if (prev === false) return true
+      else false
+    })
+    
   }
 
   const failed = async () => {
-    // setStatusBtn(0);
-    statusBtn = 0;
+    statusBtn = 0
 
     const res = await fetch('https://npfapathon.onrender.com/track', {
       method: 'post',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ statusBtn })
+      body: JSON.stringify({ status :  statusBtn }),
+      credentials : "include"
     }
     )
     const resData = await res.json();
     console.log(resData)
+    setRefresh(prev => {
+      if (prev === false) return true
+      else false
+    })
+    
   }
 
   return (
