@@ -1,42 +1,33 @@
 'use client'
 
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from '@/styles/dashboard.module.css'
 import Image from 'next/image'
 
-// export const fetchData = async () => {
-
-
-//   return {
-//     props: {
-//       resData,
-//     },
-//   }
-// }
-
 function page() {
 
-  // const [days, setDays] = useState(0);
 
-  // useEffect(() => {
+  const [days, setDays] = useState(0)
 
-  // }, [])
+  useEffect(() => {
+    async function fetchData() {
+      const response = await fetch('https://npfapathon.onrender.com/dashboard', {
+        method: "get",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json"
+        },
+        credentials: "include"
+      })
+      const resData = await response.json()
+      // setDays(resData.days)
+      setDays(resData.days)
+      console.log(resData)
 
-  let days = 0;
-  
-  async function fetchData() {
-    const response = await fetch('https://npfapathon.onrender.com/dashboard')
-    const resData = await response.json()
-    // setDays(resData.days)
-    days = resData.days;
-    console.log(resData)
-  }
-  fetchData();
+    }
 
-  // const [statusBtn, setStatusBtn] = useState(0)
-
-  // const resData = await fetchData();
-
+    fetchData()
+  }, [days])
 
   let statusBtn;
 
@@ -55,6 +46,8 @@ function page() {
     // )
     // const resData = await res.json();
     // console.log(resData)
+
+
   }
 
   const failed = async () => {
