@@ -14,11 +14,11 @@ const Form = () => {
         username: '',
         password: ''
     })
-    
-    const setData = (e) => {
-        const {value, name} = e.target;
 
-        setUserdata(prev=> {
+    const setData = (e) => {
+        const { value, name } = e.target;
+
+        setUserdata(prev => {
             return {
                 ...prev,
                 [name]: value
@@ -36,18 +36,26 @@ const Form = () => {
             },
             body: JSON.stringify(userdata),
             credentials: 'include'
-        } )
+        })
 
         const resdata = await res.json()
         console.log(res.status)
 
-        if (res.status === 200)
-        {
+        if (res.status === 201) {
             console.log('Running...');
             router.push('/Dashboard');
         }
+        else if (res.status === 404) {
+            console.log('User not registered');
+        }
+        else if (res.status === 401) {
+            console.log('Password incorrect')
+        }
+        else {
+            console.log('else');
+        }
     }
-    
+
     return (
         <div>
             <form className={styles.form}>

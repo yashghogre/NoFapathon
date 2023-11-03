@@ -20,9 +20,9 @@ const Signupform = () => {
     })
 
     const setData = (e) => {
-        const {value, name} = e.target;
+        const { value, name } = e.target;
 
-        setUserdata(prev=> {
+        setUserdata(prev => {
             return {
                 ...prev,
                 [name]: value
@@ -30,7 +30,7 @@ const Signupform = () => {
         })
     }
 
-    const onSubmit = async(e) => {
+    const onSubmit = async (e) => {
         e.preventDefault();
 
         const res = await fetch('https://npfapathon.onrender.com/register', {
@@ -39,11 +39,26 @@ const Signupform = () => {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(userdata)
-        } )
+        })
 
-        console.log(res.json())
+        // console.log(res.json())
+        const resData = res.json();
+        console.log(res.status);
 
-        router.push('/Login')
+        if (res.status === 201) {
+            console.log(resData.message)
+            router.push('/Login')
+        }
+        else if (res.status === 400) {
+            console.log(resData.message)
+        }
+        else if (res.status === 409) {
+            console.log(resData.message)
+        }
+        else {
+            console.log('else')
+        }
+
     }
 
     return (
@@ -71,7 +86,7 @@ const Signupform = () => {
                 {/* <div className={styles.dash}></div> */}
             </div>
             <div className={styles.signupDiv}>
-                <Link href={'/Signup'} className={styles.signupLink}>Login to <span className={styles.signuptext}>NoFapathon</span></Link>
+                <Link href={'/Login'} className={styles.signupLink}>Login to <span className={styles.signuptext}>NoFapathon</span></Link>
             </div>
         </div>
     )
