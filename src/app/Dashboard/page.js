@@ -36,16 +36,16 @@ function Page() {
     // setStatusBtn(1);
     statusBtn = 1;
 
-    // const res = await fetch('https://npfapathon.onrender.com/track', {
-    //   method: 'post',
-    //   headers: {
-    //     'Content-Type': 'application/json'
-    //   },
-    //   body: JSON.stringify({ statusBtn })
-    // }
-    // )
-    // const resData = await res.json();
-    // console.log(resData)
+    const res = await fetch('https://npfapathon.onrender.com/track', {
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ statusBtn })
+    }
+    )
+    const resData = await res.json();
+    console.log(resData)
 
 
   }
@@ -54,16 +54,16 @@ function Page() {
     // setStatusBtn(0);
     statusBtn = 0;
 
-    // const res = await fetch('https://npfapathon.onrender.com/track', {
-    //   method: 'post',
-    //   headers: {
-    //     'Content-Type': 'application/json'
-    //   },
-    //   body: JSON.stringify({ statusBtn })
-    // }
-    // )
-    // const resData = await res.json();
-    // console.log(resData)
+    const res = await fetch('https://npfapathon.onrender.com/track', {
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ statusBtn })
+    }
+    )
+    const resData = await res.json();
+    console.log(resData)
   }
 
   return (
