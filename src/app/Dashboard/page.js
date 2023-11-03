@@ -14,20 +14,20 @@ import Image from 'next/image'
 //   }
 // }
 
-function page () {
+function page() {
 
-  const [days, setDays] = useState();
+  const [days, setDays] = useState(0);
 
-  useEffect(() => {
+  // useEffect(() => {
 
-    async function fetchData() {
-      const response = await fetch('https://npfapathon.onrender.com/dashboard')
-      const resData = await response.json()
-      setDays(resData.days)
-      console.log(resData)
-    }
-    fetchData();
-  }, [])
+  // }, [])
+  async function fetchData() {
+    const response = await fetch('https://npfapathon.onrender.com/dashboard')
+    const resData = await response.json()
+    setDays(resData.days)
+    console.log(resData)
+  }
+  fetchData();
 
   // const [statusBtn, setStatusBtn] = useState(0)
 
