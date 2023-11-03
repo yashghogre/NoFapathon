@@ -22,7 +22,7 @@ function page() {
 
   // }, [])
 
-  let days;
+  let days = 0;
   
   async function fetchData() {
     const response = await fetch('https://npfapathon.onrender.com/dashboard')
@@ -37,11 +37,8 @@ function page() {
 
   // const resData = await fetchData();
 
-  console.log(responseData)
 
   let statusBtn;
-
-  // const days = 10;
 
   const success = async () => {
 
