@@ -10,8 +10,7 @@ const Form = () => {
     const router = useRouter();
 
     const [userdata, setUserdata] = useState({
-        email: '',
-        username: '',
+        emailorusername: '',
         password: ''
     })
 
@@ -60,7 +59,7 @@ const Form = () => {
         <div>
             <form className={styles.form}>
                 <label className={styles.label}>email / username</label>
-                <input name='email' type='email' className={styles.input} value={userdata.email} onChange={setData} />
+                <input name='email' type='email' className={styles.input} value={userdata.emailorusername} onChange={setData} />
                 <label className={styles.label}>password</label>
                 <input name='password' type='password' className={styles.input} value={userdata.password} onChange={setData} />
                 <input type='submit' className={styles.submitBtn} onClick={onSubmit} />
