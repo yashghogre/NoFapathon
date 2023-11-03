@@ -19,21 +19,13 @@ const page = () => {
   const [responseData, setResponseData] = useState({});
 
   useEffect(async () => {
-    async function fetchData() {
-      const response = await fetch('https://npfapathon.onrender.com/dashboard', {
-        method: 'get',
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json'
-        },
-      })
-      const resData = await response.json()
-      setResponseData(resData)
-      console.log(resData)
-    }
 
-    fetchData();
-  }, [responseData])
+    const response = await fetch('https://npfapathon.onrender.com/dashboard')
+    const resData = await response.json()
+    setResponseData(resData)
+    console.log(resData)
+
+  }, [])
 
   // const [statusBtn, setStatusBtn] = useState(0)
 
