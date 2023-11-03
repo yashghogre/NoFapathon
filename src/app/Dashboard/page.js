@@ -14,11 +14,11 @@ import Image from 'next/image'
 //   }
 // }
 
-const page = async () => {
+const page = () => {
 
   const [responseData, setResponseData] = useState({});
 
-  useEffect(() => {
+  useEffect(async () => {
     async function fetchData() {
       const response = await fetch('https://npfapathon.onrender.com/dashboard', {
         method: 'get',
