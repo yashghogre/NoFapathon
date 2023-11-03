@@ -16,13 +16,13 @@ import Image from 'next/image'
 
 const page = () => {
 
-  const [responseData, setResponseData] = useState({});
+  const [days, setDays] = useState();
 
   useEffect(async () => {
 
     const response = await fetch('https://npfapathon.onrender.com/dashboard')
     const resData = await response.json()
-    setResponseData(resData)
+    setDays(resData.days)
     console.log(resData)
 
   }, [])
@@ -35,7 +35,7 @@ const page = () => {
 
   let statusBtn;
 
-  const days = 10;
+  // const days = 10;
 
   const success = async () => {
 
@@ -73,7 +73,7 @@ const page = () => {
   return (
     <main className={styles.main}>
       <div className={styles.mainDiv}>
-        <h1 className={styles.streakCounter}>Your No Fap Streak: {responseData.days} days</h1>
+        <h1 className={styles.streakCounter}>Your No Fap Streak: {days} days</h1>
         <p className={styles.subText}>Your balls have chip inserted in them, if you choose the incorrect option they will explode. So choose wisely!</p>
         <div className={styles.mainBtnDiv}>
           <div className={styles.btnDiv}>
