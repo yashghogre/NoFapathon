@@ -18,7 +18,7 @@ const page = () => {
 
   const [days, setDays] = useState();
 
-  useEffect(async () => {
+  useEffect(async () => { 
 
     const response = await fetch('https://npfapathon.onrender.com/dashboard')
     const resData = await response.json()
