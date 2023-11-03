@@ -1,26 +1,36 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import { useState } from 'react'
 import styles from '@/styles/dashboard.module.css'
 import Image from 'next/image'
 
-const page = () => {
+export const getStaticProps = async () => {
+  const response = await fetch('https://npfapathon.onrender.com/dashboard', {
+    method: 'get',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json'
+    },
+  })
+  const resData = await response.json()
 
-  useEffect(() => {
-    async function fetchData() {
-      const response = await fetch('https://npfapathon.onrender.com/dashboard', {
-        method: 'get',
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json'
-        },
-      })
-      const resData = await response.json()
-      console.log(resData)
-    }
+  return {
+    props: {
+      resData,
+    },
+  }
+}
 
-    fetchData();
-  }, [])
+const page = ({resData}) => {
+
+  // useEffect(() => {
+  //   async function fetchData() {
+
+  //     console.log(resData)
+  //   }
+
+  //   fetchData();
+  // }, [])
 
   const [statusBtn, setStatusBtn] = useState(0)
 
