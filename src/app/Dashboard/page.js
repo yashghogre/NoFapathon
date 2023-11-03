@@ -14,7 +14,7 @@ import Image from 'next/image'
 //   }
 // }
 
-const page = () => {
+const Page = () => {
 
   const [days, setDays] = useState();
 
@@ -90,4 +90,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page
