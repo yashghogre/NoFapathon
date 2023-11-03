@@ -4,24 +4,24 @@ import { useState } from 'react'
 import styles from '@/styles/dashboard.module.css'
 import Image from 'next/image'
 
-export const getStaticProps = async () => {
-  const response = await fetch('https://npfapathon.onrender.com/dashboard', {
-    method: 'get',
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json'
-    },
-  })
-  const resData = await response.json()
+// export const fetchData = async () => {
+//   const response = await fetch('https://npfapathon.onrender.com/dashboard', {
+//     method: 'get',
+//     headers: {
+//       Accept: 'application/json',
+//       'Content-Type': 'application/json'
+//     },
+//   })
+//   const resData = await response.json()
 
-  return {
-    props: {
-      resData,
-    },
-  }
-}
+//   return {
+//     props: {
+//       resData,
+//     },
+//   }
+// }
 
-const page = ({resData}) => {
+const page = async () => {
 
   // useEffect(() => {
   //   async function fetchData() {
@@ -33,6 +33,8 @@ const page = ({resData}) => {
   // }, [])
 
   const [statusBtn, setStatusBtn] = useState(0)
+
+  // const resData = await fetchData();
 
   const days = 10;
 
@@ -68,7 +70,7 @@ const page = ({resData}) => {
   return (
     <main className={styles.main}>
       <div className={styles.mainDiv}>
-        <h1 className={styles.streakCounter}>Your No Fap Streak: {resData.days} days</h1>
+        <h1 className={styles.streakCounter}>Your No Fap Streak: {days} days</h1>
         <p className={styles.subText}>Your balls have chip inserted in them, if you choose the incorrect option they will explode. So choose wisely!</p>
         <div className={styles.mainBtnDiv}>
           <div className={styles.btnDiv}>
