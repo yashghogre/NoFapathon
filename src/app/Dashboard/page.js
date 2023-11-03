@@ -11,6 +11,7 @@ function Page() {
   const [days, setDays] = useState(0)
   const [refresh, setRefresh] = useState(false)
   const [showLoader, setShowLoader] = useState(false)
+  const [todayStatus, setTodayStatus] = useState(false)
 
   let statusBtn = 0
   const date = new Date();
@@ -55,6 +56,7 @@ function Page() {
     }
     )
     const resData = await res.json();
+    setTodayStatus(resData.todayStatus)
     console.log(resData)
     setRefresh(prev => {
       if (prev === false) return true
@@ -94,7 +96,7 @@ function Page() {
       <div className={styles.mainDiv}>
         <h1 className={styles.streakCounter}>Your No Fap Streak: {days} days</h1>
         <p className={styles.subText}>Your balls have chip inserted in them, if you choose the incorrect option they will explode. So choose wisely!</p>
-        <div className={styles.mainBtnDiv}>
+        {todayStatus ? <h1>You have submitted the response today</h1> : <div className={styles.mainBtnDiv}>
           <div className={styles.btnDiv}>
             <Image src={'/smile.webp'} width={500} height={500} alt='smile' className={styles.smile} />
             <input className={styles.btn} type='submit' style={{ backgroundColor: 'green' }} value={'I did not Fap today !!!'} name={statusBtn} onClick={success} />
@@ -104,6 +106,7 @@ function Page() {
             <input className={styles.btn} type='submit' style={{ backgroundColor: 'red' }} value={'I Fapped today !!!'} name={statusBtn} onClick={failed} />
           </div>
         </div>
+        }
       </div>
     </main>
   )
