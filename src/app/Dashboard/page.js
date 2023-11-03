@@ -14,7 +14,7 @@ import Image from 'next/image'
 //   }
 // }
 
-const page = () => {
+function page () {
 
   const [days, setDays] = useState();
 
