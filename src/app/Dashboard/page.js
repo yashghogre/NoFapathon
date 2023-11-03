@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import React from 'react'
 import styles from '@/styles/dashboard.module.css'
 import Image from 'next/image'
 
@@ -32,15 +32,19 @@ const page = async () => {
   //   fetchData();
   // }, [])
 
-  const [statusBtn, setStatusBtn] = useState(0)
+  // const [statusBtn, setStatusBtn] = useState(0)
 
   // const resData = await fetchData();
+
+  let statusBtn;
 
   const days = 10;
 
   const success = async () => {
 
-    setStatusBtn(1);
+    // setStatusBtn(1);
+    statusBtn = 1;
+
     const res = await fetch('https://npfapathon.onrender.com/track', {
       method: 'post',
       headers: {
@@ -54,7 +58,9 @@ const page = async () => {
   }
 
   const failed = async () => {
-    setStatusBtn(0);
+    // setStatusBtn(0);
+    statusBtn = 0;
+    
     const res = await fetch('https://npfapathon.onrender.com/track', {
       method: 'post',
       headers: {
