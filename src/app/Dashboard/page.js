@@ -13,6 +13,7 @@ function Page() {
   const [showLoader, setShowLoader] = useState(false)
 
   let statusBtn = 0
+  const date = new Date();
 
   useEffect(() => {
     async function fetchData() {
@@ -41,12 +42,15 @@ function Page() {
     statusBtn = 1
     setShowLoader(true)
 
+    const time = new Date();
+    const date = time.getDate();
+
     const res = await fetch('https://npfapathon.onrender.com/track', {
       method: 'post',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ status: statusBtn }),
+      body: JSON.stringify({ status: statusBtn, date }),
       credentials: "include"
     }
     )

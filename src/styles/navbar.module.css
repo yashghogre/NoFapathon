@@ -29,6 +29,10 @@
     list-style: none;
 }
 
+.menuIcon {
+    display: none;
+}
+
 .listItem:hover {
     text-decoration: underline;
 }
@@ -36,4 +40,35 @@
 .listLink {
     color: white;
     text-decoration: none;
+}
+
+.menuDiv {
+    /* z-index: -1; */
+    /* transform: translateY(-50vh); */
+    opacity: 0;
+}
+
+@media screen and (max-width: 600px) {
+    .listItem {
+        display: none;
+    }
+
+    .menuIcon {
+        display: block;
+    }
+
+    .menuDiv {
+        /* transform: translateY(0vh); */
+        opacity: 1;
+        position: absolute;
+        padding-top: 10vh;
+        padding-bottom: 10vh;
+        background-color: rgba(0,0,0, 0.5);
+    }
+    
+    .menuItem {
+        color: white;
+        text-decoration: none;
+        font-size: 2.5vh;
+    }
 }

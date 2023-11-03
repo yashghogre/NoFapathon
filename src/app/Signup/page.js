@@ -6,7 +6,7 @@ import styles from '@/styles/signup.module.css'
 
 const page = async () => {
 
-    await new Promise(resolve => setTimeout(resolve, 2000))
+    // await new Promise(resolve => setTimeout(resolve, 2000))
     
     return (
         <div className={styles.mMDiv}>

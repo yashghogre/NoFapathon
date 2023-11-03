@@ -50,3 +50,26 @@
     object-fit: contain;
     transform: scaleX(-1);
 }
+
+@media screen and (max-width: 600px) {
+    .mainMainDiv {
+        width: 100vw;
+        position: fixed;
+        /* overflow-y: scroll; */
+    }
+
+    .mainDiv {
+        flex-direction: column;
+        margin: 10vh 0;
+        height: 50vh;
+        /* gap: -1vh; */
+    }
+
+    .image {
+        transform: rotate(90deg);
+    }
+
+    .image1 {
+        transform: rotate(-90deg);
+    }
+}

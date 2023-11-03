@@ -60,3 +60,17 @@
     /* color: #FF6A88; */
     color: black;
 }
+
+@media screen and (max-width: 600px) {
+    .form {
+        width: 90vw;
+    }
+
+    .label, .input {
+        width: 90vw;
+    }
+
+    .label {
+        font-size: 2vh;
+    }
+}

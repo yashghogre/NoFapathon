@@ -8,6 +8,7 @@ import Link from 'next/link'
 
 
 export default function Home() {
+  
   return (
     <main className={styles.main}>
       <Navbar />
@@ -46,7 +47,7 @@ export default function Home() {
               <source src="/jsvideo.mp4" type="video/mp4" /> 
               Your browser does not support the video tag.
             </video> */}
-            <iframe src="https://www.youtube-nocookie.com/embed/9LsfSnb9_u0?autoplay=1&loop=1&modestbranding=1&rel=0&cc_load_policy=1&iv_load_policy=3&fs=0&color=white&controls=0&disablekb=1&playlist=9LsfSnb9_u0" width="560" height="315" title="Johnny Sins Cameo for Fortnite gamers No Nut November pledge" frameborder="0"></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/9LsfSnb9_u0?autoplay=1&loop=1&modestbranding=1&rel=0&cc_load_policy=1&iv_load_policy=3&fs=0&color=white&controls=0&disablekb=1&playlist=9LsfSnb9_u0" width="560" height="315" title="Johnny Sins Cameo for Fortnite gamers No Nut November pledge" frameborder="0" className={styles.video}></iframe>
           </div>
         </div>
       </div>

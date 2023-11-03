@@ -64,3 +64,18 @@
 .signuptext {
     color: #FF6A88;
 }
+
+@media screen and (max-width: 600px) {
+    .form {
+        width: 90vw;
+    }
+
+    .label {
+        width: 100%;
+        font-size: 2vh;
+    }
+
+    .input {
+        width: 100%;
+    }
+}
