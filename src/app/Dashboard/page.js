@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import styles from '@/styles/dashboard.module.css'
 import Image from 'next/image'
 
-function page() {
+function Page() {
 
 
   const [days, setDays] = useState(0)
@@ -86,4 +86,4 @@ function page() {
   )
 }
 
-export default page
+export default Page
