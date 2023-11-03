@@ -31,11 +31,12 @@ function Page() {
       // setDays(resData.days)
       setDays(resData.days)
       console.log(resData)
+      setTodayStatus(resData.todayStatus)
       setShowLoader(false)
     }
 
     fetchData()
-  }, [days, refresh])
+  }, [days, refresh, todayStatus])
 
   const success = async () => {
 
