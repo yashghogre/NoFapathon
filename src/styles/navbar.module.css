@@ -29,6 +29,23 @@
     list-style: none;
 }
 
+.cDiv {
+    /* width: 100%; */
+    display: flex;
+    justify-content: space-between;
+    gap: 7vw;
+}
+
+.lOBtn {
+    padding: 1vh 1vw;
+    font-size: 1.1vw;
+    border: 0;
+    border-radius: 1vw;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+}
+
 .menuIcon {
     display: none;
 }
@@ -70,5 +87,12 @@
         color: white;
         text-decoration: none;
         font-size: 2.5vh;
+    }
+
+    .resCDiv {
+        display: flex;
+        flex-direction: column;
+        gap: 10vh;
+        margin: 0;
     }
 }

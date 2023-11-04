@@ -4,14 +4,18 @@ import React, { useEffect, useState } from 'react'
 import styles from '@/styles/dashboard.module.css'
 import Dbloader from '../components/Dbloader'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
+import toast, { Toaster } from 'react-hot-toast'
 
 function Page() {
 
+  const router = useRouter();
 
   const [days, setDays] = useState(0)
   const [refresh, setRefresh] = useState(false)
   const [showLoader, setShowLoader] = useState(false)
   const [todayStatus, setTodayStatus] = useState(false)
+  const [loginStatus, setloginStatus] = useState()
 
   let statusBtn = 0
   const date = new Date();
@@ -64,6 +68,9 @@ function Page() {
       else false
     })
     setShowLoader(false)
+    if (res.status === 200) {
+      toast.success('Streak added Successfully!')
+    }
   }
 
   const failed = async () => {
@@ -88,11 +95,47 @@ function Page() {
     setShowLoader(false)
   }
 
+  const logOut = async () => {
+
+    setShowLoader(true);
+
+    const response = await fetch('https://npfapathon.onrender.com/logout', {
+      method: 'get',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json'
+      },
+      credentials: 'include'
+    })
+
+    const resData = await response.json();
+    console.log(resData);
+
+    setRefresh(prev => {
+      if (prev === false) return true
+      else false
+    })
+
+    if (response.status === 200) {
+      toast.success('Logged out successfully!')
+      router.push('/')
+    }
+
+    setShowLoader(false)
+  }
+
   return (
     <main className={styles.main}>
+
+      <Toaster />
+
       {showLoader ? <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', width: '100vw', position: 'absolute', backgroundColor: 'rgba(0,0,0,0.7)' }}>
         <Dbloader className={styles.loader} />
       </div> : null}
+
+      <div className={styles.lODiv}>
+        <button className={styles.lOBtn} onClick={logOut}>Log Out</button>
+      </div>
 
       <div className={styles.mainDiv}>
         <h1 className={styles.streakCounter}>Your No Fap Streak: {days} days</h1>

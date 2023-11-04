@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import styles from '@/styles/signupform.module.css'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
+import toast, { Toaster } from 'react-hot-toast'
 
 const Signupform = () => {
 
@@ -47,12 +48,15 @@ const Signupform = () => {
 
         if (res.status === 201) {
             console.log(resData.message)
+            toast.success('User created successfully!')
             router.push('/Login')
         }
         else if (res.status === 400) {
+            toast.success('There was an error creating the user!')
             console.log(resData.message)
         }
         else if (res.status === 409) {
+            toast.success('There was an error creating the user!')
             console.log(resData.message)
         }
         else {
@@ -63,6 +67,7 @@ const Signupform = () => {
 
     return (
         <div>
+            <Toaster />
             <form className={styles.form}>
                 <label className={styles.label}>First Name</label>
                 <input type='text' name='fname' className={styles.input} value={userdata.fname} onChange={setData} />

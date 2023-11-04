@@ -5,16 +5,18 @@ import styles from './page.module.css'
 import Navbar from './components/Navbar'
 import Videoplayer from './components/Videoplayer'
 import Link from 'next/link'
-
+import toast, { Toaster } from 'react-hot-toast'
 
 export default function Home() {
-  
+
   return (
     <main className={styles.main}>
+      <Toaster />
       <Navbar />
       <div className={styles.mainDiv}>
         <div className={styles.leftDiv}>
           <h2 className={styles.text}>Get all the information about No Nut November here</h2>
+          <h2 className={styles.text}>Track your No Nut November progress on NoFapathon</h2>
           <Link href={'/#about'}>
             <button className={styles.button}>
               <span className={styles.buttonContent}>Join the Revolution 🍌</span>

@@ -3,13 +3,15 @@ import Navbar from '../components/Navbar'
 import Image from 'next/image'
 import Signupform from '../components/Signupform'
 import styles from '@/styles/signup.module.css'
+import toast, { Toaster } from 'react-hot-toast'
 
 const page = async () => {
 
     // await new Promise(resolve => setTimeout(resolve, 2000))
-    
+
     return (
         <div className={styles.mMDiv}>
+            <Toaster />
             {/* <Navbar /> */}
             <div className={styles.titleDiv}>
                 <h1>Signup to <span className={styles.nofapathon}>NoFapathon</span></h1>

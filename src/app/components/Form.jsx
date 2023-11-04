@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import styles from '@/styles/loginform.module.css'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
+import toast, { Toaster } from 'react-hot-toast'
 
 const Form = () => {
 
@@ -42,21 +43,26 @@ const Form = () => {
 
         if (res.status === 201) {
             console.log('Running...');
+            toast.success('Login Successful')
             router.push('/Dashboard');
         }
         else if (res.status === 409) {
             console.log('User not registered');
+            toast.error('User not Registered!')
         }
         else if (res.status === 401) {
             console.log('Password incorrect')
+            toast.error('Password incorrect!')
         }
         else {
             console.log('else');
+            toast.error('Password incorrect!')
         }
     }
 
     return (
         <div>
+            <Toaster />
             <form className={styles.form}>
                 <label className={styles.label}>email / username</label>
                 <input name='username' type='text' className={styles.input} value={userdata.username} onChange={setData} />
