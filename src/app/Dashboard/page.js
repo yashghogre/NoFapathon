@@ -109,7 +109,7 @@ function Page() {
     })
 
     // const resData = await response.json();
-    console.log(resData);
+    // console.log(resData);
 
     setRefresh(prev => {
       if (prev === false) return true

@@ -9,6 +9,7 @@ const Navbar = () => {
 
   const [opacity, setOpacity] = useState('0')
   const [isLogin, setIsLogin] = useState(false)
+  const [refresh, setRefresh] = useState(false)
 
   useEffect(() => {
     async function fetchData() {
@@ -32,7 +33,7 @@ const Navbar = () => {
     }
 
     fetchData();
-  }, [])
+  }, [refresh])
 
   const logOut = async () => {
 
@@ -46,7 +47,7 @@ const Navbar = () => {
     })
 
     // const resData = await response.json();
-    console.log(resData);
+    // console.log(resData);
 
     setRefresh(prev => {
       if (prev === false) return true
