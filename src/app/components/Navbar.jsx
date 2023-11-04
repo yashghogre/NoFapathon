@@ -34,6 +34,31 @@ const Navbar = () => {
     fetchData();
   }, [])
 
+  const logOut = async () => {
+
+    const response = await fetch('https://npfapathon.onrender.com/logout', {
+      method: 'get',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json'
+      },
+      credentials: 'include'
+    })
+
+    const resData = await response.json();
+    console.log(resData);
+
+    setRefresh(prev => {
+      if (prev === false) return true
+      else false
+    })
+
+    if (response.status === 200) {
+      toast.success('Logged out successfully!')
+      router.push('/')
+    }
+  }
+
   return (
     <div className={styles.mMDiv}>
       <div className={styles.mainDiv}>
