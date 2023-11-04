@@ -108,7 +108,7 @@ function Page() {
       credentials: 'include'
     })
 
-    const resData = await response.json();
+    // const resData = await response.json();
     console.log(resData);
 
     setRefresh(prev => {
